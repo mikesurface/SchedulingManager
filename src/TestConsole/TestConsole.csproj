@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78AA9441-C9BF-428D-98EF-FDAD53A39617}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestConsole</RootNamespace>
+    <AssemblyName>TestConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImmutableDirectedGraph.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Core\Model\Entity.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Core\Model\EntityGenerator.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Core\Model\EntityIdGenerator.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Core\Model\IEntity.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\Event.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\GreedyActivityStrategy.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\IEventable.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\IJobProcessor.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\InWorkEvent.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\IPriorityFunction.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\IScheduledJob.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\ITimeSegment.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\JobPriorityFunction.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\JobProcessorList.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\JobSchedulerAlgorithm.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\Model\InstanceConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\Model\SingleInstanceConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\ResourceSchedule.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\ScheduledJob.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\ScheduledResource.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\SlackTimeRemainingJobPriorityFunction.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\Solver.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\TimePoint.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Core\TimeSegment.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\ISolverDataManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\IJob.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\IJobManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\Job.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\JobConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\JobFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\JobManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Jobs\JobOld.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ITool.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\IToolInstance.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\Tool.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolInstance.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolInstanceFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Tools\ToolTypes.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\ISkill.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\IWorker.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\LaborConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\Skill.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\SkillConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\SkillFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\SkillTypes.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\Worker.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\WorkerFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Workers\WorkerManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Zones\IZone.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Zones\Zone.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Zones\ZoneConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Zones\ZoneFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Resources\Zones\ZoneManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Shifts\IShift.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Shifts\Shift.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Shifts\ShiftConverter.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Shifts\ShiftFactory.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\Shifts\ShiftManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Scheduling\Model\SolverDataManager.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Solvers\GreedyActivityScheduleSolver.cs" />
+    <Compile Include="MikesSolverCode\Boeing.Algorithms\Solvers\Utils\DataSetSchedulingUtility.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Core\IJobSchedule.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Core\ISchedule.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Core\ISolverResult.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\ActivitySchedule.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\ActivityLaborSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\ActivitySchedulingEvent.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\ActivitySchedulingEventManager.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\ActivityToolSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\ActivityResourceSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IActivityLaborSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IActivityResourceSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IActivitySchedulingEvent.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IActivitySchedulingEventManager.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IActivityToolSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IProjectSchedulingEventManager.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IResourceSchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IScheduleAnalysisRequest.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\IScheduleManager.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\Interfaces\ISchedulingEvent.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\Core\SchedulingEventCollection.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\IAnalysisRequest.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\Mikes\ProjectSchedulingEventManager.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\ResourceInstanceReservation.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\ResourceInstanceReservations.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\SolutionSchedule.cs" />
+    <Compile Include="MikesSolverCode\Constraints.Portable\Scheduling\TaskSchedule.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MikesSolverCode\Boeing.Algorithms\Core\Solvers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
